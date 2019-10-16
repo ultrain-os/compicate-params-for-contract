@@ -1,0 +1,112 @@
+{
+  "version": "ultraio:1.0",
+  "types": [
+    {
+      "new_type_name": "u8",
+      "type": "uint8"
+    }
+  ],
+  "structs": [
+    {
+      "fields": [
+        {
+          "name": "unitId",
+          "type": "u8"
+        },
+        {
+          "name": "level",
+          "type": "u8"
+        }
+      ],
+      "base": "",
+      "name": "Units"
+    },
+    {
+      "fields": [
+        {
+          "name": "itemId",
+          "type": "u8"
+        },
+        {
+          "name": "chance",
+          "type": "u8"
+        }
+      ],
+      "base": "",
+      "name": "DropItems"
+    },
+    {
+      "fields": [
+        {
+          "name": "low",
+          "type": "u8"
+        },
+        {
+          "name": "high",
+          "type": "u8"
+        }
+      ],
+      "base": "",
+      "name": "DropToken"
+    },
+    {
+      "fields": [
+        {
+          "name": "units",
+          "type": "Units[]"
+        },
+        {
+          "name": "dropItems",
+          "type": "DropItems[]"
+        },
+        {
+          "name": "dropToken",
+          "type": "DropToken"
+        }
+      ],
+      "base": "",
+      "name": "ComplicateParams"
+    },
+    {
+      "fields": [
+        {
+          "name": "x",
+          "type": "u8"
+        },
+        {
+          "name": "y",
+          "type": "u8"
+        },
+        {
+          "name": "z",
+          "type": "u8"
+        }
+      ],
+      "base": "",
+      "name": "SimpleParams"
+    },
+    {
+      "fields": [
+        {
+          "name": "cp",
+          "type": "ComplicateParams"
+        },
+        {
+          "name": "sp",
+          "type": "SimpleParams"
+        }
+      ],
+      "base": "",
+      "name": "complicateParams"
+    }
+  ],
+  "actions": [
+    {
+      "ricardian_contract": "",
+      "name": "complicateParams",
+      "type": "complicateParams",
+      "ability": "pureview"
+    }
+  ],
+  "tables": []
+}
