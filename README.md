@@ -101,4 +101,45 @@ executed transaction: 8a9e8704339fad149d47f75321cb9b95f709fc7dc22937dee58e74e20a
 ```
 
 ### 使用U3调用
-// TODO(wait for ben to finish this doc.)
+```
+    const u3 = createU3()
+    const account = 'ben''//部署合约的账号
+    const contract = await u3.contract(account)
+    const tx = await contract.complicateParams({
+      'units': [
+        {
+          'unitId': 18,
+          'level': 3,
+        },
+        {
+          'unitId': 13,
+          'level': 3,
+        },
+        {
+          'unitId': 18,
+          'level': 3,
+        },
+      ],
+      'dropItems': [
+        {
+          'itemId': 1,
+          'chance': 4,
+        },
+      ],
+      'dropToken': {
+        'low': 22,
+        'high': 24,
+      },
+    }, {
+      'x': 100,
+      'y': 200,
+      'z': 255,
+    }, { authorization: [`ben@active`] })
+
+    console.log(tx.processed.action_traces[0].return_value)
+    
+    打印输出：
+    
+    units.length = 3; dropItems.length = 1; dropToken.high = 24  {"x":100,"y":200,"z":255}
+
+```
